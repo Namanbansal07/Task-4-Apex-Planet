@@ -3,54 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A simple to-do list that saves your tasks in this browser." />
-  <title>My Tasks | Naman Bansal</title>
+  <meta name="description" content="Shop a considered collection of useful, beautiful things for everyday living." />
+  <title>Objects for everyday | Common Ground</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="todo.css" />
-  <script src="todo.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header class="todo-header">
-    <a class="brand" href="../index.html" aria-label="Naman Bansal project hub"><span class="brand-mark">N</span><span>naman<span class="muted">.dev</span></span></a>
-    <nav class="todo-nav" aria-label="Main navigation">
-      <a class="home-link" href="../index.html">Home</a>
-      <a class="back-link" href="../naman_bansal_portfolio/index.html#projects">Portfolio</a>
+  <div class="announcement">Thoughtful things, made to last <span>—</span> free shipping over $100</div>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Project hub home">common<span>ground</span><i>.</i></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="#catalog" data-nav-category="all">Shop all</a>
+      <a href="#catalog" data-nav-category="Furniture">Furniture</a>
+      <a href="#catalog" data-nav-category="Lighting">Lighting</a>
+      <a href="#catalog" data-nav-category="Decor">Objects</a>
     </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">☾</button>
+    <button class="bag-button" type="button" aria-label="Shopping bag, 0 items">
+      Bag <span class="bag-count" aria-live="polite">0</span>
+    </button>
   </header>
 
-  <main class="todo-main">
-    <section class="todo-panel" aria-labelledby="todo-title">
-      <p class="eyebrow">A LITTLE PROGRESS, EVERY DAY</p>
-      <div class="todo-heading">
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">THE EVERYDAY EDIT — NO. 04</p>
+      <h1 id="page-title">Objects for <em>everyday.</em></h1>
+      <p class="intro-copy">A little more considered. A little less ordinary.<br class="desktop-break"> Find the pieces that make a place feel like yours.</p>
+      <div class="intro-note"><span class="note-line"></span> GOOD DESIGN, GOOD COMPANY</div>
+    </section>
+
+    <section class="catalog-wrap" id="catalog" aria-label="Product catalog">
+      <div class="catalog-top">
         <div>
-          <h1 id="todo-title">My tasks<span>.</span></h1>
-          <p>Write it down. Make it happen.</p>
+          <p class="eyebrow">MADE FOR LIVING</p>
+          <h2>Shop the collection</h2>
         </div>
-        <div class="todo-total" aria-live="polite"><strong id="remainingCount">0</strong><span>left to do</span></div>
+        <label class="search-wrap">
+          <span class="visually-hidden">Search products</span>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Find something..." autocomplete="off">
+          <kbd>⌘ K</kbd>
+        </label>
       </div>
 
-      <form class="todo-form" id="todoForm">
-        <label class="visually-hidden" for="todoInput">Add a task</label>
-        <input id="todoInput" name="task" type="text" maxlength="160" placeholder="What needs to get done?" autocomplete="off" required />
-        <button type="submit">Add task <span>＋</span></button>
-      </form>
+      <div class="catalog-layout">
+        <aside class="filters" aria-label="Product filters">
+          <div class="filter-heading">
+            <h3>Filters</h3>
+            <button type="button" id="clearFilters" class="text-button">Clear all</button>
+          </div>
 
-      <div class="todo-toolbar">
-        <div class="todo-filters" role="group" aria-label="Filter tasks">
-          <button type="button" class="todo-filter is-active" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" class="todo-filter" data-filter="active" aria-pressed="false">Active</button>
-          <button type="button" class="todo-filter" data-filter="completed" aria-pressed="false">Completed</button>
+          <fieldset class="filter-group category-filter">
+            <legend>Category</legend>
+            <label class="check-row"><input type="checkbox" name="category" value="Furniture"><span>Furniture</span><span class="category-count">3</span></label>
+            <label class="check-row"><input type="checkbox" name="category" value="Lighting"><span>Lighting</span><span class="category-count">3</span></label>
+            <label class="check-row"><input type="checkbox" name="category" value="Decor"><span>Decor</span><span class="category-count">3</span></label>
+            <label class="check-row"><input type="checkbox" name="category" value="Textiles"><span>Textiles</span><span class="category-count">3</span></label>
+          </fieldset>
+
+          <fieldset class="filter-group price-filter">
+            <legend>Price</legend>
+            <label class="price-label" for="priceRange">Maximum price <strong id="priceValue">$500</strong></label>
+            <input id="priceRange" type="range" min="42" max="500" step="1" value="500">
+            <div class="range-ends"><span>$42</span><span>$500+</span></div>
+          </fieldset>
+
+          <div class="filter-aside-note"><span>✳</span> Designed with intention.<br>Made for real life.</div>
+        </aside>
+
+        <div class="products-area">
+          <div class="products-toolbar">
+            <p id="resultCount" class="result-count" aria-live="polite">Showing 12 pieces</p>
+            <label class="sort-label">Sort by
+              <select id="sortSelect" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="rating">Top rated</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+              </select>
+            </label>
+          </div>
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+          <div class="empty-state" id="emptyState" hidden>
+            <span class="empty-icon">⌕</span>
+            <h3>No pieces found</h3>
+            <p>Try adjusting your filters or search for something else.</p>
+            <button type="button" id="emptyReset" class="reset-button">Clear filters</button>
+          </div>
         </div>
-        <button type="button" class="todo-clear" id="clearCompleted">Clear completed</button>
       </div>
-
-      <p class="todo-status" id="todoStatus" role="status" aria-live="polite">Your tasks are saved in this browser.</p>
-      <ul class="todo-list" id="todoList" aria-label="Tasks"></ul>
-      <p class="todo-empty" id="todoEmpty">Nothing here yet. Add a task to get started.</p>
-      <p class="todo-footnote">Your list is stored locally in this browser and is not synced to other devices.</p>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="../index.html">common<span>ground</span><i>.</i></a>
+    <p>Less, but better. Always.</p>
+    <span>© 2026 Common Ground Studio</span>
+  </footer>
 </body>
 </html>
