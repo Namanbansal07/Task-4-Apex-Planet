@@ -3,93 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A home for Naman Bansal's portfolio, to-do list, and product catalog projects." />
-  <meta name="theme-color" content="#10120f" />
-  <title>Naman Bansal — Project Space</title>
+  <meta name="description" content="Naman Bansal — B.Tech CSE student exploring web development, backend engineering, APIs and Generative AI." />
+  <title>Naman Bansal | Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="home.css" />
-  <script src="home.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="page-transition" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Naman Bansal project space home">
-      <span class="brand-mark">N</span><span>naman<span class="brand-muted">.dev</span></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
-      <span></span><span></span>
-    </button>
-    <nav class="main-nav" id="mainNav" aria-label="Project navigation">
-      <a href="naman_bansal_portfolio/index.html">Portfolio <span>01</span></a>
-      <a href="todo-list/index.html">To-do list <span>02</span></a>
-      <a href="product-listing/index.html">Product shop <span>03</span></a>
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="../index.html" aria-label="Naman Bansal project hub"><span class="brand-mark">N</span><span>naman<span class="muted">.dev</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a>
+        <a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
+      </div>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="hero-orb orb-one" aria-hidden="true"></div>
-      <div class="hero-orb orb-two" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow"><span class="status-dot"></span> A SMALL COLLECTION OF BIG IDEAS</p>
-        <h1>Made to explore.<br><span>Built to be useful.</span></h1>
-        <p class="hero-copy">A home for things I’m learning to make — from personal work to small tools and thoughtful experiences.</p>
-        <a class="hero-link" href="#projects">Explore the projects <span aria-hidden="true">↓</span></a>
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> OPEN TO LEARNING & COLLABORATION</div>
+        <p class="hero-kicker">HELLO, WORLD! I'M</p>
+        <h1>Naman<br><span class="gradient-text">Bansal.</span></h1>
+        <h2 class="hero-role">B.Tech CSE Student <span class="slash">/</span> Aspiring Developer</h2>
+        <p class="hero-description">I’m learning to turn ideas into useful digital experiences — one project, one API, and one line of code at a time.</p>
+        <div class="hero-tags"><span>Web Development</span><span>Frontend UI</span><span>Backend & GenAI</span></div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="button button-ghost" href="https://www.linkedin.com/in/namanbansal07/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span>↗</span></a>
+        </div>
+        <div class="hero-socials"><span class="mono-label">FIND ME ON</span><a href="https://github.com/Namanbansal07" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/namanbansal07/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
       </div>
-      <div class="hero-art" aria-label="Three interactive project previews">
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
-        <div class="preview-card preview-shop"><span class="preview-label">OBJECTS / 03</span><div class="shop-preview"><span></span><span></span><span></span></div><b>Shop the collection</b><small>Filter · Sort · Discover</small></div>
-        <div class="preview-card preview-todo"><span class="preview-label">DAILY / 02</span><div class="todo-preview"><i>✓</i><span></span><i></i><span></span><i></i><span></span></div><b>One thing at a time</b><small>Plan · Focus · Finish</small></div>
-        <div class="preview-card preview-work"><span class="preview-label">ABOUT / 01</span><div class="work-preview"><span>N</span><i>naman.dev</i><b>Curiosity<br>into code.</b></div><small>Learn · Build · Share</small></div>
+      <div class="hero-visual" aria-label="Decorative code editor illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-window">
+          <div class="window-top"><div class="window-dots"><i></i><i></i><i></i></div><span>about_naman.js</span><span class="window-lock">⌘</span></div>
+          <div class="code-content">
+            <p><span class="line-number">01</span><span class="code-purple">const</span> developer = {</p>
+            <p><span class="line-number">02</span>&nbsp; name: <span class="code-green">'Naman Bansal'</span>,</p>
+            <p><span class="line-number">03</span>&nbsp; education: <span class="code-green">'B.Tech CSE'</span>,</p>
+            <p><span class="line-number">04</span>&nbsp; focus: [</p>
+            <p><span class="line-number">05</span>&nbsp;&nbsp; <span class="code-green">'Web Development'</span>,</p>
+            <p><span class="line-number">06</span>&nbsp;&nbsp; <span class="code-green">'Backend & APIs'</span>,</p>
+            <p><span class="line-number">07</span>&nbsp;&nbsp; <span class="code-green">'Generative AI'</span></p>
+            <p><span class="line-number">08</span>&nbsp; ],</p>
+            <p><span class="line-number">09</span>&nbsp; mindset: <span class="code-green">'always_learning'</span></p>
+            <p><span class="line-number">10</span>};<span class="cursor"></span></p>
+          </div>
+          <div class="window-footer"><span><i class="tiny-green"></i> Ready to build</span><span>UTF-8&nbsp; · &nbsp;JavaScript</span></div>
+        </div>
+        <div class="float-card float-card-top"><span class="float-icon">✳</span><div><strong>Curious by nature</strong><small>Building every day</small></div></div>
+        <div class="float-card float-card-bottom"><span class="float-icon purple-icon">{ }</span><div><strong>Code. Learn. Repeat.</strong><small>Progress over perfection</small></div></div>
+        <div class="hero-glow"></div>
       </div>
-      <div class="hero-index"><span>01</span><i></i> THREE PROJECTS, ONE PLACE</div>
+      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
     </section>
 
-    <section class="projects-section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">THE PROJECTS</p><h2 id="projects-title">Pick a place to start<span>.</span></h2></div>
-        <p>Three different ways to explore what I’ve been building.</p>
+    <section class="section about-section" id="about">
+      <div class="container section-grid">
+        <div><p class="section-label">01 / ABOUT ME</p><h2 class="section-title">Curiosity first.<br><span class="muted-title">Code follows.</span></h2></div>
+        <div class="about-copy">
+          <p class="lead">I’m a second-year Computer Science Engineering student with a growing interest in building practical software and understanding how technology works behind the scenes.</p>
+          <p>Currently, I’m strengthening my foundations in programming and front-end development while exploring APIs, backend development, and Generative AI. I enjoy learning by building, improving projects through feedback, and sharing my progress.</p>
+          <div class="about-facts">
+            <div><span class="fact-number">01</span><span class="fact-label">Learn by building</span></div>
+            <div><span class="fact-number">02</span><span class="fact-label">Stay curious</span></div>
+            <div><span class="fact-number">03</span><span class="fact-label">Keep improving</span></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="project-grid">
-        <a class="project-card portfolio-card" href="naman_bansal_portfolio/index.html">
-          <div class="card-art">
-            <div class="portfolio-mock"><div class="mock-top"><span></span><span></span><span></span><i>naman.dev</i></div><div class="mock-main"><small>HELLO, WORLD! I'M</small><b>Naman<br><em>Bansal.</em></b><span>Curiosity first. Code follows.</span><div class="mock-chips"><i>Web</i><i>Build</i><i>Learn</i></div></div></div>
-            <span class="art-number">01 — PROFILE</span>
-            <span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-info"><div><p>PERSONAL PORTFOLIO</p><h3>Meet the maker</h3></div><span class="card-open">Explore <b>↗</b></span></div>
-        </a>
-
-        <a class="project-card todo-card" href="todo-list/index.html">
-          <div class="card-art">
-            <div class="todo-mock"><div class="todo-mock-head"><span>My tasks<span class="accent-dot">.</span></span><b>03 left</b></div><div class="task-row done"><i>✓</i><span>Make a little progress</span></div><div class="task-row"><i></i><span>Build something useful</span></div><div class="task-row"><i></i><span>Take a well-earned break</span></div><div class="todo-progress"><i></i></div><small>ONE STEP AT A TIME</small></div>
-            <span class="art-number">02 — DAILY TOOL</span>
-            <span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-info"><div><p>FOCUS & FLOW</p><h3>Make space for doing</h3></div><span class="card-open">Open app <b>↗</b></span></div>
-        </a>
-
-        <a class="project-card shop-card" href="product-listing/index.html">
-          <div class="card-art">
-            <div class="shop-mock"><div class="shop-mock-head"><b>common<span>ground</span><i>.</i></b><span>SHOP&nbsp; ALL&nbsp;&nbsp; OBJECTS&nbsp;&nbsp; BAG</span></div><div class="shop-mock-hero"><small>THE EVERYDAY EDIT</small><b>Objects for<br><em>everyday.</em></b></div><div class="shop-products"><i></i><i></i><i></i><span>ARC CHAIR&nbsp;&nbsp; TABLE LAMP&nbsp;&nbsp; VESSEL</span></div></div>
-            <span class="art-number">03 — INTERACTIVE SHOP</span>
-            <span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-info"><div><p>PRODUCT DISCOVERY</p><h3>Find your next favorite</h3></div><span class="card-open">Browse <b>↗</b></span></div>
-        </a>
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <p class="section-label">02 / TOOLKIT</p>
+        <div class="section-heading-row"><h2 class="section-title">Tools I’m learning<br><span class="muted-title">to build with.</span></h2><p class="section-aside">A growing toolkit — focused on strong fundamentals and hands-on practice.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><div class="skill-card-top"><span class="skill-icon orange">⌘</span><span class="skill-index">01</span></div><h3>Web Development</h3><p>Creating responsive pages and interactive interfaces.</p><div class="skill-chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div></article>
+          <article class="skill-card"><div class="skill-card-top"><span class="skill-icon blue">JS</span><span class="skill-index">02</span></div><h3>Logic & Problem Solving</h3><p>Practising problem-solving and core programming concepts with clean, structured logic.</p><div class="skill-chips"><span>JavaScript</span><span>C</span></div></article>
+          <article class="skill-card"><div class="skill-card-top"><span class="skill-icon green">⌁</span><span class="skill-index">03</span></div><h3>Backend & APIs</h3><p>Exploring how applications connect, exchange data, and work behind the scenes.</p><div class="skill-chips"><span>REST APIs</span><span>Backend basics</span></div></article>
+          <article class="skill-card"><div class="skill-card-top"><span class="skill-icon purple">✳</span><span class="skill-index">04</span></div><h3>Tools & Workflow</h3><p>Using developer tools to manage code and learn collaboratively.</p><div class="skill-chips"><span>Git</span><span>GitHub</span><span>VS Code</span></div></article>
+        </div>
+        <p class="skills-note"><span>✦</span> Skill levels grow with practice. This list reflects my current learning focus, not a claim of professional mastery.</p>
       </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <p class="section-label">03 / SELECTED WORK</p>
+        <div class="section-heading-row"><h2 class="section-title">Learning in public.<br><span class="muted-title">Building for real.</span></h2><p class="section-aside">A selection of practice work and learning projects. Add repository links and live demos as you publish them.</p></div>
+        <div class="projects-grid">
+          <article class="project-card project-featured">
+            <div class="project-art art-todo"><div class="art-browser"><div class="art-bar"><i></i><i></i><i></i></div><div class="todo-preview"><div class="preview-title">My tasks <span>＋</span></div><div class="preview-task checked-task"><b>✓</b><span>Review today's goals</span></div><div class="preview-task"><b></b><span>Build a new feature</span></div><div class="preview-task"><b></b><span>Reflect and improve</span></div><div class="preview-progress"><span></span></div></div></div><span class="art-caption">INTERFACE / 01</span></div>
+            <div class="project-info"><div class="project-meta"><span>WEB DEVELOPMENT</span><span>01</span></div><h3>Task & To-Do List</h3><p>A working task list with completion tracking, filters, and browser-based persistence using localStorage.</p><div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>localStorage</span></div><a class="project-link" href="../todo-list/index.html">Open the to-do list <span>↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-contact"><div class="contact-preview"><span class="contact-mini-label">LET'S CONNECT</span><strong>Have an idea?<br><em>Let's talk.</em></strong><div class="fake-input">Your name <span>↗</span></div><div class="fake-input">Your message</div><div class="fake-send">Send message&nbsp; →</div></div><span class="art-caption">UI DESIGN / 02</span></div>
+            <div class="project-info"><div class="project-meta"><span>FRONT-END PRACTICE</span><span>02</span></div><h3>Contact Form UI</h3><p>A clean contact form concept focused on layout, accessible labels, and friendly interaction.</p><div class="project-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><a class="project-link" href="https://github.com/Namanbansal07" target="_blank" rel="noopener noreferrer">View GitHub profile <span>↗</span></a></div>
+          </article>
+          <article class="project-card">
+            <div class="project-art art-scripts"><div class="terminal-preview"><div class="terminal-title"><span>●</span> logic-practice.js</div><p><i>const</i> numbers = [1, 2, 3, 4, 5];</p><p class="indent">const evens = numbers.filter(n =&gt; n % 2 === 0);</p><p class="indent double">console.log(evens);</p><div class="terminal-output">[2, 4]</div><div class="terminal-cursor"></div></div><span class="art-caption">PROGRAMMING / 03</span></div>
+            <div class="project-info"><div class="project-meta"><span>LOGIC PRACTICE</span><span>03</span></div><h3>JavaScript Logic Patterns</h3><p>Small exercises for arrays, conditions, and clean problem-solving patterns used in practical front-end work.</p><div class="project-tech"><span>JavaScript</span><span>Logic</span><span>Fundamentals</span></div><a class="project-link" href="https://github.com/Namanbansal07" target="_blank" rel="noopener noreferrer">View GitHub profile <span>↗</span></a></div>
+          </article>
+        </div>
+        <p class="project-disclaimer">Project descriptions are portfolio starter content based on your learning areas. Replace or refine them to match the exact work in your repositories before publishing.</p>
+      </div>
+    </section>
+
+    <section class="section journey-section" id="journey">
+      <div class="container section-grid">
+        <div><p class="section-label">04 / MY JOURNEY</p><h2 class="section-title">Small steps.<br><span class="muted-title">Real progress.</span></h2><p class="journey-intro">Every task is a chance to learn a concept, practise a skill, and get a little better.</p></div>
+        <div class="timeline">
+          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-top"><span>EDUCATION</span><span>ONGOING</span></div><h3>B.Tech — Computer Science & Engineering</h3><p>Building foundations in programming, problem-solving, and software development.</p></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-top"><span>WEB DEVELOPMENT</span><span>PROJECT-BASED LEARNING</span></div><h3>Apex Planet Internship Tasks</h3><p>Practising web development through task-based work, interface building, and sharing progress professionally.</p></article>
+          <article class="timeline-item"><span class="timeline-dot"></span><div class="timeline-top"><span>CURRENT FOCUS</span><span>IN PROGRESS</span></div><h3>APIs, Backend & Generative AI</h3><p>Exploring how front-end experiences connect to services and how AI can support useful applications.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-grid-bg"></div>
+      <div class="container contact-content"><p class="section-label">05 / GET IN TOUCH</p><h2>Have a project<br>in <span class="gradient-text">mind?</span></h2><p>I’m open to connecting with fellow learners, developers, and people building interesting things. Let’s learn and grow together.</p><div class="contact-actions"><a class="button button-primary" href="https://www.linkedin.com/in/namanbansal07/" target="_blank" rel="noopener noreferrer">Message me on LinkedIn <span>↗</span></a><a class="button button-ghost" href="https://github.com/Namanbansal07" target="_blank" rel="noopener noreferrer">Explore my GitHub <span>↗</span></a></div><div class="contact-email-note">Want to add an email address? Update the contact links in <code>index.html</code>.</div></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <a class="brand" href="./"><span class="brand-mark">N</span><span>naman<span class="brand-muted">.dev</span></span></a>
-    <p>Made with curiosity, one project at a time.</p>
-    <a class="back-top" href="#main">BACK TO TOP ↑</a>
-  </footer>
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">N</span><span>naman<span class="muted">.dev</span></span></a><span>Designed & built with curiosity.</span><span>© <span id="year"></span> Naman Bansal</span><a href="#home" class="back-top">BACK TO TOP ↑</a></div></footer>
 </body>
 </html>
